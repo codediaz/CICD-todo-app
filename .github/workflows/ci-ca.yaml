@@ -71,6 +71,8 @@ jobs:
 
 
     - uses: actions-hub/kubectl@master
+      env:
+        KUBE_CONFIG: '/home/runner/.kube/config'
       with:
         args: delete deployment to-do-app-deployment -n grupo3
         
