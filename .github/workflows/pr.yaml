@@ -16,7 +16,8 @@ jobs:
     
      - name: Install depencies
        run: |
-        npm install
-       working-directory: /
+        yarn install 
+ 
+
 
     
