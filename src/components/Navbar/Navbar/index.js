@@ -9,7 +9,7 @@ export default function Navbar() {
         <div className="container">
           <div>
             <Bookmark/>
-            <h1>RAFA Y RODRI X 1100PREE</h1>
+            <h1>To Do</h1>
           </div>
           
         </div>
