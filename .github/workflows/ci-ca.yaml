@@ -70,19 +70,12 @@ jobs:
        aws eks update-kubeconfig --region us-east-1 --name eks-grupo0 --alias eks-grupo0
 
 
-    - uses: actions-hub/kubectl@master
-      env:
-        KUBE_CONFIG: '/home/runner/.kube/config'
-      with:
-        args: delete deployment to-do-app-deployment -n grupo3
-        
-    - uses: actions-hub/kubectl@master
-      with:
-        args: apply -f app-deployment.yaml -n grupo3
+    - name: Cluster Kubectl
+      run: |
+        kubectl delete deployment to-do-app-deployment -n grupo3 
+        kubectl apply -f app-deployment.yaml -n grupo3
+        kubectl apply -f app-service.yaml -n grupo3
 
-    - uses: actions-hub/kubectl@master
-      with:
-        args: apply -f app-service.yaml -n grupo3
       
 
 
