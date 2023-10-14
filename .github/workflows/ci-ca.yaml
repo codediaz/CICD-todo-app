@@ -53,7 +53,7 @@ jobs:
         NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         echo "Iniciando Push"
-        docker push codediaz/to-do-app$NEW_VERSION
+        docker push codediaz/to-do-app:$NEW_VERSION
         docker push codediaz/to-do-app:latest
         echo "Finalizando Push"
 
