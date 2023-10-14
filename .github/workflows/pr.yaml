@@ -1,0 +1,8 @@
+name: PR check
+on: 
+  - pull request
+
+jobs:
+  pr:
+    runs-on: ubuntu-20.04
+    
