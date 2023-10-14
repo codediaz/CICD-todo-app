@@ -14,9 +14,12 @@ spec:
     spec:
       containers:
       - name: to-do-app
-        image: codediaz/to-do-app:latest
+        image: 524390291345.dkr.ecr.us-east-1.amazonaws.com/todoapp-grupo3:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
+      imagePullSecrets: 
+        - name: regcred
         livenessProbe:
           httpGet:
             path: /healthz
