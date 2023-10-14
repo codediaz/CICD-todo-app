@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: to-do-app-deployment
+  namespace: grupo3
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: to-do-app
@@ -21,11 +22,11 @@ spec:
           httpGet:
             path: /healthz
             port: 3000
-          initialDelaySeconds: 10
-          periodSeconds: 5
+          initialDelaySeconds: 90
+          periodSeconds: 10
         readinessProbe:
           httpGet:
             path: /readiness
             port: 3000
-          initialDelaySeconds: 5
-          periodSeconds: 5
+          initialDelaySeconds: 10
+          periodSeconds: 10
