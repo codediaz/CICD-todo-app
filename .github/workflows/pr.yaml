@@ -9,10 +9,15 @@ jobs:
     steps:
      - name: Checkout
        uses: actions/checkout@v3
+     
+     - name: Clear npm cache
+       run: npm cache clean --force
+       
     
      - name: Install depencies
        run: |
-        npm install
-       working-directory: /
+        yarn install 
+ 
+
 
     
